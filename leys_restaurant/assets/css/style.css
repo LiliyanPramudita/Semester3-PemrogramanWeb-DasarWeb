@@ -1,0 +1,268 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f6f9f6;
+  color: #2f3e2f;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+  background-color: #A8C3A1;
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background 0.4s ease;
+}
+
+.navbar.scrolled {
+  background-color: #8fae88;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: #2f3e2f;
+}
+
+/* unordered list */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #2f3e2f;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* HERO */
+.hero {
+  background: url('assets/images/pexels-vanessa-loring-5965654.jpg') center/cover no-repeat;
+  height: 60vh;
+  display: flex;
+  flex-direction: column; /* Susun elemen di dalamnya dari atas ke bawah */
+  justify-content: center; /*Posisikan isi secara tengah secara vertikal. */
+  align-items: center;
+  color: white;
+  text-shadow: 1px 1px 4px #000;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero h1 span {
+  color: #A8C3A1;
+}
+/* TOMBOL KE MENU */
+.btn {
+  background-color: #A8C3A1;
+  padding: 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.intro .btn {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #8fae88;
+  transform: translateY(-3px);
+}
+
+/* SECTION UMUM */
+section {
+  padding: 40px 100px;
+  text-align: center;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  font-size: 1.8em;
+}
+.intro {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #f6f9f6;
+}
+
+.intro h2 {
+  font-size: 1.8em;
+  color: #2f3e2f;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  color: #4e5c4e;
+  margin-bottom: 40px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 46px;
+}
+
+.feature-card {
+  background-color: #fff;
+  border-radius: 35px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 340px;
+  padding-bottom: 0px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  border-radius: 35px 35px 0 0;
+}
+
+.feature-card h3 {
+  color: #2f3e2f;
+  margin: 15px 0 10px;
+}
+
+.feature-card p {
+  padding: 0 10px;
+  font-size: 0.9em;
+  color: #4e5c4e;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* MENU GRID */
+.menu-grid {
+  display: flex;  
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 46px;
+}
+
+.menu-item {
+  background-color: #fff;
+  width: 350px;
+  border-radius: 35px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-info {
+  padding: 15px;
+  text-align: left;
+}
+
+.menu-info h3 {
+  color: #2f3e2f;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+}
+
+.menu-info p {
+  color: #4e5c4e;
+  font-size: 0.9em;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  text-align: justify;
+}
+
+.menu-info small {
+  color: #6c7c6c;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+.menu-info .price {
+  margin-top: 10px;
+  font-weight: 600;
+  color: #6e8b63;
+  font-size: 1.05em;
+}
+
+.menu-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  background-color: #A8C3A1;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+/* ====== ANIMASI FADE IN SAAT SCROLL ====== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* KEYFRAMES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .features, .menu-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section {
+    padding: 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+}
